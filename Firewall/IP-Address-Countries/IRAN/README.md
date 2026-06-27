@@ -1,31 +1,46 @@
+# Iran IPv4 Address List for MikroTik
 
-# MikroTik Iran IP List
+This repository contains an IPv4 address list of Iranian IP ranges formatted for MikroTik RouterOS.
 
-This repository contains a MikroTik `.rsc` file with IP ranges of Iran.
+## File
 
-## 📁 File
-- IRAN-IR.rsc
+```text
+Iran-IP-ipv4.rsc
+```
 
-## 🚀 How to use on MikroTik
+## Address List Name
 
-### 1. Upload file to MikroTik
-Use Winbox or SCP:
+```text
+IRAN-IR
+```
 
-### 2. Import file in MikroTik terminal
+## Example Entry
 
-### 3. Verify address list
+```rsc
+/ip firewall address-list add address=103.111.69.0/24 list=IRAN-IR
+```
 
-## 🎯 Usage Example
+## Import to MikroTik
 
-You can use this list for:
+Upload the file to your router and run:
 
-- Firewall rules
-- Routing policies
-- Blocking or allowing traffic by country
+```bash
+/import file-name=Iran-IP-ipv4.rsc
+```
 
-Example rule:
+## Use Cases
 
-/ip firewall filter add chain=forward src-address-list=IRAN action=accept
+* Geo-based firewall rules
+* Domestic vs international traffic separation
+* Routing policies
+* Access control and security filtering
 
-## ⚠️ Note
-This list may need periodic updates due to ISP IP changes.
+## Notes
+
+* IP ranges may change over time.
+* Periodic updates are recommended.
+* Tested format: MikroTik RouterOS Address List Script (.rsc)
+
+## Source
+
+IP ranges are collected from public IP allocation databases and converted into MikroTik RouterOS address-list format.
